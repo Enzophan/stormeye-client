@@ -17,3 +17,10 @@ Install NPM dependencies:
 npm install
 ```
 
+Launch the service:
+
+```shell
+DEBUG=app*,dispatcher* \
+LOGOLITE_DEBUGLOG_ENABLED=true \
+node index.js
+```
