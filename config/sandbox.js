@@ -1,6 +1,9 @@
 module.exports = {
   application: {
-    enabled: true
+    enabled: true,
+    errorEvent: {
+      name: 'exception'
+    }
   },
   plugins: {
     appWebsocket: {
