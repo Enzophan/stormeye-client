@@ -20,6 +20,7 @@ npm install
 Launch the service:
 
 ```shell
+NODE_ENV=test \
 DEBUG=app*,dispatcher* \
 LOGOLITE_DEBUGLOG_ENABLED=true \
 node index.js
