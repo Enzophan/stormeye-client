@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "app-websocket": "^0.2.0",
-    "devebot": "^0.2.6"
+    "devebot": "^0.2.6",
+    "opflow": "^0.1.8"
   }
 }

@@ -1,9 +1,30 @@
+'use strict';
+
+var path = require('path');
+
 module.exports = {
   application: {
     enabled: true,
     errorEvent: {
       name: 'exception'
-    }
+    },
+    publishers: {
+      "feature_1": {
+        uri: process.env.STORMEYE_OPFLOW_URI || 
+            process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
+        exchangeName: 'stormeye-dispatcher-portal',
+        routingKey: 'stormeye-dispatcher-feature-1',
+        autoinit: false
+      },
+      "feature_2": {
+        uri: process.env.STORMEYE_OPFLOW_URI || 
+            process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
+        exchangeName: 'stormeye-dispatcher-portal',
+        routingKey: 'stormeye-dispatcher-feature-2',
+        autoinit: false
+      }
+    },
+    mappingStore: path.join(__dirname, '../lib/mappings/demo'),
   },
   plugins: {
     appWebsocket: {
