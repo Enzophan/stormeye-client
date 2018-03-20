@@ -8,20 +8,20 @@ module.exports = {
     errorEvent: {
       name: 'exception'
     },
-    publishers: {
+    rpcMasters: {
       "feature_1": {
-        uri: process.env.STORMEYE_OPFLOW_URI || 
-            process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
+        uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
         exchangeName: 'stormeye-dispatcher-portal',
         routingKey: 'stormeye-dispatcher-feature-1',
-        autoinit: false
+        autoinit: false,
+        applicationId: 'StormeyeDispatcherWs'
       },
       "feature_2": {
-        uri: process.env.STORMEYE_OPFLOW_URI || 
-            process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
+        uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
         exchangeName: 'stormeye-dispatcher-portal',
         routingKey: 'stormeye-dispatcher-feature-2',
-        autoinit: false
+        autoinit: false,
+        applicationId: 'StormeyeDispatcherWs'
       }
     },
     mappingStore: path.join(__dirname, '../lib/mappings/demo'),
