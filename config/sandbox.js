@@ -8,7 +8,22 @@ module.exports = {
     errorEvent: {
       name: 'exception'
     },
+    specialEvents: {
+      failed: {
+        name: 'ERROR'
+      },
+      timeout: {
+        name: 'TIMEOUT'
+      }
+    },
     rpcMasters: {
+      "fibonacci": {
+        uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
+        exchangeName: 'stormeye-dispatcher-portal',
+        routingKey: 'stormeye-dispatcher-fibonacci',
+        autoinit: false,
+        applicationId: 'StormeyeDispatcherWs'
+      },
       "feature_1": {
         uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
         exchangeName: 'stormeye-dispatcher-portal',
