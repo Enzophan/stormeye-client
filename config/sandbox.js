@@ -5,11 +5,14 @@ var path = require('path');
 module.exports = {
   application: {
     enabled: true,
-    errorEvent: {
-      name: 'exception'
-    },
     specialEvents: {
+      error: {
+        name: 'ERROR'
+      },
       failed: {
+        name: 'ERROR'
+      },
+      invalid: {
         name: 'ERROR'
       },
       timeout: {
