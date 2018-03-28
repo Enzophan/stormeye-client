@@ -38,9 +38,11 @@ var FibonacciRpcWorker = function(params, configurer) {
         response.emitProgress(r.step, r.number);
       };
 
+      var result = fibonacci.result();
+      result.actionId = body.actionId;
       debugx.enabled && debugx('Request[%s] has been finished: %s', requestId,
-        JSON.stringify(fibonacci.result()));
-      response.emitCompleted(fibonacci.result());
+        JSON.stringify(result));
+      response.emitCompleted(result);
     })
   }
 

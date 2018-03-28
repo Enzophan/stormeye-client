@@ -8,30 +8,37 @@ var socket = require('socket.io-client')('http://127.0.0.1:7878', {
   reconnect: true
 });
 
-var demoData = {
-  'action_34': {
+var demoData = [
+  {
     name: 'fibonacci',
     data: {
       number: 34
     }
   },
-  'action_35': {
+  {
     name: 'fibonacci',
     data: {
       number: 35
     }
   },
-  'action_50': {
+  {
     name: 'fibonacci',
     data: {
       number: 50
     }
   }
-}
+]
+
+demoData = demoData.map(function(item, idx) {
+  item.data.actionId = lodash.padStart(idx, 6, '0');
+  return item;
+});
 
 var loadsync = new Loadsync([{
   name: 'NO_TIMEOUT',
-  cards: lodash.keys(demoData)
+  cards: lodash.map(demoData, function(item) {
+    return item.data.actionId
+  })
 }]);
 
 loadsync.ready(function(info) {
@@ -40,11 +47,11 @@ loadsync.ready(function(info) {
 
 socket.on('connect', function() {
   socket.on('fibonacci', function(info) {
-    var action = 'action_' + info.number;
-    console.log('Result of %s: %s', action, JSON.stringify(info, null, 2));
-    loadsync.check(action, 'NO_TIMEOUT');
+    var actionId = info.actionId;
+    console.log('Result of %s: %s', actionId, JSON.stringify(info, null, 2));
+    loadsync.check(actionId, 'NO_TIMEOUT');
   });
-  lodash.forOwn(demoData, function(descriptor, action) {
+  lodash.forEach(demoData, function(descriptor) {
     socket.emit(descriptor.name, descriptor.data);
   });
 });
