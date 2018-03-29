@@ -27,17 +27,17 @@ module.exports = {
         autoinit: false,
         applicationId: 'StormeyeDispatcherWs'
       },
-      "feature_1": {
+      "feature1": {
         uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
         exchangeName: 'stormeye-dispatcher-portal',
-        routingKey: 'stormeye-dispatcher-feature-1',
+        routingKey: 'stormeye-dispatcher-feature1',
         autoinit: false,
         applicationId: 'StormeyeDispatcherWs'
       },
-      "feature_2": {
+      "feature2": {
         uri: process.env.STORMEYE_OPFLOW_URI || process.env.DEVEBOT_OPFLOW_URI || 'amqp://localhost',
         exchangeName: 'stormeye-dispatcher-portal',
-        routingKey: 'stormeye-dispatcher-feature-2',
+        routingKey: 'stormeye-dispatcher-feature2',
         autoinit: false,
         applicationId: 'StormeyeDispatcherWs'
       }
