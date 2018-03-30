@@ -3,6 +3,7 @@
 var app = require('devebot').launchApplication({
   appRootPath: __dirname
 }, [
+  'app-opmaster',
   'app-websocket'
 ]);
 

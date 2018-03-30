@@ -1,5 +1,6 @@
 module.exports = {
   devebot: {
+    mode: 'heartbeat',
     verbose: true
   },
   logger: {
