@@ -50,15 +50,15 @@ module.exports = {
         "stormeye-worker-node2/features": {
           "method7": {
             rpcName: "feature2",
-            routineId: "method7"
+            routineId: "routine7"
           },
           "method8": {
             rpcName: "feature2",
-            routineId: "method8"
+            routineId: "routine8"
           },
           "method9": {
             rpcName: "feature2",
-            routineId: "method9"
+            routineId: "routine9"
           }
         }
       },

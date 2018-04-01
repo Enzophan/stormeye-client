@@ -12,19 +12,19 @@ var demoData = [
   {
     name: 'method7',
     data: {
-      number: 34
+      number: 45
     }
   },
   {
     name: 'method8',
     data: {
-      number: 35
+      number: 46
     }
   },
   {
     name: 'method9',
     data: {
-      number: 50
+      number: 47
     }
   }
 ]
